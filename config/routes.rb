@@ -1,8 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'artists'
-  
   map.connect "/artists/:id/page/:page", :controller => 'artists', :action => 'show'
-  map.resources :artists
+  map.resources :artists, :member => { :fetch_tweets => :post }
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

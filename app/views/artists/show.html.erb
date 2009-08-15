@@ -6,12 +6,15 @@
 <hr />
 <h2>Tweets</h2>
 
-<%- for result in @results -%>
+<%- for tweet in @tweets -%>
 	<p>
-		<%= result.status %><br />
-		by <em><%= result.user.username %></em> <%= time_ago_in_words result.posted_at %> ago
+		<%= tweet.status %><br />
+		by <em><%= tweet.user.username %></em> <%= time_ago_in_words tweet.posted_at %> ago
 	</p>
 <%- end -%>
 
-<%= will_paginate @results, :page_links => false %>
+<%= will_paginate @tweets, :page_links => false %>
+
 <hr />
+
+<%= button_to "Fetch Tweets", fetch_tweets_artist_path(@artist) %>

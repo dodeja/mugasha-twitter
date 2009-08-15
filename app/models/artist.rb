@@ -4,6 +4,7 @@ class Artist < ActiveRecord::Base
   
   has_many :tweets, :order => "posted_at DESC"
   has_many :users, :through => :tweets
+  has_many :searches
   
   # TODO: only update permalink if the name has been changed
   def before_save
