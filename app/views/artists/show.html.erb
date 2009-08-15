@@ -1,0 +1,17 @@
+<h1><%= @artist.name %></h1>
+
+<p><%= link_to "Delete", artist_path(@artist), :method => :delete, :confirm => "Are you sure you want to delete artist \"#{@artist.name}\"?" %></p>
+<p><%= link_to "Back", artists_path %></p>
+
+<hr />
+<h2>Tweets</h2>
+
+<%- for result in @results -%>
+	<p>
+		<%= result.status %><br />
+		by <em><%= result.user.username %></em> <%= time_ago_in_words result.posted_at %> ago
+	</p>
+<%- end -%>
+
+<%= will_paginate @results, :page_links => false %>
+<hr />

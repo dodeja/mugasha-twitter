@@ -1,0 +1,15 @@
+<h2>All Artists</h2>
+
+<ul id="artists">
+	<%= render @artists %>
+	<%= will_paginate @artists, :page_links => false %>
+</ul>
+
+<br />
+<h4>Create New Artist</h4>
+
+<%= error_messages_for :artist, :header_message => nil %>
+
+<%- form_for :artist, :url => artists_path, :html => { :id => "new_artist" } do |f| -%>
+	<%= render :partial => "form", :locals => { :f => f, :button_text => "Create" } %>
+<%- end -%>

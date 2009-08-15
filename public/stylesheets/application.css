@@ -1,0 +1,32 @@
+body {
+	margin: 2.4em 0;
+	padding: 0;
+	text-align: center;
+	background-color: #298FE7;
+}
+
+#container {
+	margin: 0 auto;
+	width: 34em;
+	text-align: left;
+	padding: 0.9em;
+	border: 2px solid black;
+	background-color: white;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.errorExplanation {
+	color: red;
+}
+
+.next_page {
+	float: right;
+}
